@@ -1,8 +1,10 @@
 package test;
 
+import main.Account;
+
 public class AccountTest {
 
-    public void testAccount() {
+    public void testAccount() throws Exception {
         Account account = new Account();
 
         if(account == null) {
@@ -12,6 +14,12 @@ public class AccountTest {
 
     public static void main(String[] args) {
         AccountTest accountTest = new AccountTest();
-        accountTest.testAccount();
+        try {
+            accountTest.testAccount();
+        } catch (Exception e) {
+            System.out.println("Failed");
+            return;
+        }
+        System.out.println("Success!!");
     }
 }
