@@ -10,4 +10,12 @@ public class Account {
     public int getBalance() {
         return balance;
     }
+
+    public void withdraw(int money) {
+        this.balance -= money;
+    }
+
+    public void deposit(int money) {
+        this.balance += money;
+    }
 }

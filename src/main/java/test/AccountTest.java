@@ -4,7 +4,6 @@ import main.Account;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class AccountTest {
 
@@ -20,5 +19,19 @@ public class AccountTest {
 
         account = new Account(100);
         assertEquals(100, account.getBalance(), "make account with 100");
+    }
+
+    @Test
+    public void testWithdraw() throws Exception {
+        Account account = new Account(10000);
+        account.withdraw(1000);
+        assertEquals(9000, account.getBalance());
+    }
+
+    @Test
+    public void testDeposit() throws Exception {
+        Account account = new Account(10000);
+        account.deposit(1000);
+        assertEquals(11000, account.getBalance());
     }
 }
