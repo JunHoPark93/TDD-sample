@@ -36,4 +36,10 @@ public class AccountTest {
         account.deposit(1000);
         assertEquals(11000, account.getBalance());
     }
+
+    @Test
+    public void testWithdraw_2000원인출() throws Exception {
+        account.withdraw(2000);
+        assertEquals(8000, account.getBalance());
+    }
 }
